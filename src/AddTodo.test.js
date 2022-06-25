@@ -46,7 +46,7 @@ afterEach(() => {
   const element = screen.getByRole('button', {name: /Add/i});
   const dueDate = "06/24/2022";
 
-  fireEvent.change(inputTask, { target: { value: ""}});
+  
   fireEvent.change(inputDate, { target: { value: dueDate}});
   fireEvent.click(element);
 
@@ -63,7 +63,6 @@ afterEach(() => {
   const dueDate = "06/24/2022";
 
   fireEvent.change(inputTask, { target: { value: "History Test"}});
-  fireEvent.change(inputDate, { target: { value: null }});
   fireEvent.click(element);
 
   const check = screen.getByText(/You have no todo's left/i);
