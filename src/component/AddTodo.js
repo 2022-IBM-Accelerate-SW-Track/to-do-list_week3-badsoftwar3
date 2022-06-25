@@ -52,12 +52,13 @@ class AddTodo extends Component {
       // an OnClick event.
       // 4. The value of the text field also should reflect the local state of this component.
       
-        <div data-testid="new-item-button">
+        <div data-testid="new-item-input">
         <TextField
           label="Add New Item"
           variant="outlined"
           onChange={this.handleChange}
           value={this.state.content}
+          data-testid="new-item-input"
         />
         <LocalizationProvider dateAdapter={AdapterDateFns}>         
       <DesktopDatePicker
