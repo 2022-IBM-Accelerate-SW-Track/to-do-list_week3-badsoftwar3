@@ -25,14 +25,14 @@ afterEach(() => {
   const inputDate = screen.getByPlaceholderText("mm/dd/yyyy");
   const element = screen.getByRole('button', {name: /Add/i});
   const dueDate = "06/24/2022";
-  //const dueDate2 = 06/23/2022"
+  const dueDate2 = "06/23/2022";
 
   fireEvent.change(inputTask, { target: { value: "History Test"}});
   fireEvent.change(inputDate, { target: { value: dueDate}});
   fireEvent.click(element);
 
   fireEvent.change(inputTask, { target: { value: "History Test"}});
-  fireEvent.change(inputDate, { target: { value: dueDate}});
+  fireEvent.change(inputDate, { target: { value: dueDate2}});
   fireEvent.click(element);
 
   let check = screen.getAllByText(/History Test/i);
