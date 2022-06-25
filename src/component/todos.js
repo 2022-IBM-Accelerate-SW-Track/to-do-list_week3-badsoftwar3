@@ -25,7 +25,7 @@ const Todos = ({ todos, deleteTodo }) => {
               data-testid={todo.content}
             <ListItemButton component="a" href="#simple-list">
               <Checkbox style={{paddingLeft:0}} color="primary" onClick={() => deleteTodo(todo.id)}/>
-              <ListItemText primary={todo.content} secondary={due}/>
+              <ListItemText primary={todo.content} secondary={todo.due}/>
             </ListItemButton>
           </Card>
         </Grid>
