@@ -12,15 +12,20 @@ import { Card, Grid, ListItemButton, ListItemText, Checkbox} from "@mui/material
 const Todos = ({ todos, deleteTodo }) => {
   const todoList = todos.length ? (
     todos.map((todo) => {
+      color = white
+      if (new Date(due) > new Date()){
+        color = yellow
+      }
       return (
         <Grid key={todo.id}>
-          <Card style={{marginTop:10}}>
+          <Card style={{marginTop:10, backgroud : color}}>
             {/* Remember, we set the local state of this todo item when the user submits the form in 
             AddTodo.js. All we need to do is return the todo list item {todo.content} as well as its 
             current date/time {todo.date}. Also, the item's id is utilized in order to correctly delete an item from the Todo list*/}.
+              data-testid={todo.content}
             <ListItemButton component="a" href="#simple-list">
               <Checkbox style={{paddingLeft:0}} color="primary" onClick={() => deleteTodo(todo.id)}/>
-              <ListItemText primary={todo.content} secondary={todo.date}/>
+              <ListItemText primary={todo.content} secondary={due}/>
             </ListItemButton>
           </Card>
         </Grid>
