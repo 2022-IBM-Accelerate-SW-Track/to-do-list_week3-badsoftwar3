@@ -79,9 +79,6 @@ afterEach(() => {
   fireEvent.change(inputDate, { target: { value: dueDate}});
   fireEvent.click(element);
 
-  const checkInput = screen.getByText(/History Test/i);
-  expect(checkInput).toBeInTheDocument();
-
   const checkbox = screen.getByRole('checkbox');
   fireEvent.click(checkbox);
 
