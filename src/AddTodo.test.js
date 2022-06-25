@@ -35,7 +35,7 @@ afterEach(() => {
   fireEvent.change(inputDate, { target: { value: dueDate2}});
   fireEvent.click(element);
 
-  screen,getByText(/History Test/i);
+  screen.getByText(/History Test/i);
 
  });
 
@@ -103,5 +103,5 @@ afterEach(() => {
   fireEvent.click(element);
 
   const historyCheck = screen.getByTestId(/History/i).style.background;
-  expect(historyCheck).toBe("rgb(211,204,255)");
+  expect(historyCheck).toBe("rgb(211, 204, 255)");
  });
