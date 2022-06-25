@@ -34,7 +34,7 @@ afterEach(() => {
   fireEvent.change(inputTask, { target: { value: "History Test"}});
   fireEvent.change(inputDate, { target: { value: dueDate}});
   fireEvent.click(element);
-  const check = scree.getAllByText(/History Test/i)
+  const check = screen.getAllByText(/History Test/i)
   expect(check.length).toBe(1);
  });
 
