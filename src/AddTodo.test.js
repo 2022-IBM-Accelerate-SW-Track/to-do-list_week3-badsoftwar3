@@ -25,7 +25,7 @@ afterEach(() => {
   const inputDate = screen.getByPlaceholderText("mm/dd/yyyy");
   const element = screen.getByRole('button', {name: /Add/i});
   const dueDate = "06/24/2023";
-  //const dueDate2 = "07/23/2023";
+  const dueDate2 = "07/23/2023";
   fireEvent.change(inputTask, { target: { value: "History Test"}});
   fireEvent.change(inputDate, { target: { value: dueDate}});
   fireEvent.click(element);
