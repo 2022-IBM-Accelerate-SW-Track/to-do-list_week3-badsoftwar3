@@ -84,5 +84,5 @@ afterEach(() => {
   fireEvent.change(inputDate, { target: { value: dueDate}});
   fireEvent.click(element);
   const historyCheck = screen.getByTestId(/History Test/i);
-  expect(historyCheck).toHaveStyle('background-color:  #FF0000')
+  expect(historyCheck).toHaveStyle('background-color:  #ffffffff')
  });
