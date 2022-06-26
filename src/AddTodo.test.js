@@ -79,15 +79,10 @@ afterEach(() => {
   const inputTask = screen.getByRole('textbox', {name: /Add New Item/i});
   const inputDate = screen.getByPlaceholderText("mm/dd/yyyy");
   const element = screen.getByRole('button', {name: /Add/i});
-  const dueDate = "06/24/2023";
-  const dueDate2 = "04/09/2022";
+  const dueDate = "01/30/2022";
   fireEvent.change(inputTask, { target: { value: "History Test"}});
   fireEvent.change(inputDate, { target: { value: dueDate}});
   fireEvent.click(element);
-  fireEvent.change(inputTask, { target: { value: "Math Test"}});
-  fireEvent.change(inputDate, { target: { value: dueDate2}});
-  fireEvent.click(element);
-  const historyCheck = screen.getByTestId(/History Test/i).style.background;
-  const MathCheck = screen.getByTestId(/Math Test/i).style.background;
-  expect(historyCheck == MathCheck).toBe(false);
+  const historyCheck = screen.getByTestId(/History Test/i);
+  expect(historyCheck).toHaveStyle('background-color:  #FF0000')
  });
